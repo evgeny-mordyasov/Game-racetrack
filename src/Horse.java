@@ -13,6 +13,12 @@ public class Horse
     }
 
 
+    public void move() {}
+
+
+    public void print() {}
+
+
     public String getName()
     {
         return name;

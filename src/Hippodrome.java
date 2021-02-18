@@ -25,4 +25,42 @@ public class Hippodrome
 
 
     public List<Horse> getHorses() { return horses; }
+
+
+    public void run()
+    {
+        for (int iterator = 0; iterator < 100; iterator++)
+        {
+            move();
+            print();
+
+            try
+            {
+                Thread.sleep(200);
+            } catch (InterruptedException e) { e.printStackTrace(); }
+        }
+    }
+
+
+    public void move()
+    {
+        for(Horse currentHorse : horses)
+        {
+            currentHorse.move();
+        }
+    }
+
+
+    public void print()
+    {
+        for(Horse currentHorse : horses)
+        {
+            currentHorse.print();
+        }
+
+        for (int iterator = 0; iterator < 10; iterator++)
+        {
+            System.out.println();
+        }
+    }
 }
