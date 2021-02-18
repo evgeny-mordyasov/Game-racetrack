@@ -6,6 +6,7 @@ public class Hippodrome
     private List<Horse> horses;
     public static Hippodrome game;
 
+
     public Hippodrome(List horses)
     {
         this.horses = horses;
@@ -23,10 +24,8 @@ public class Hippodrome
         Hippodrome.game = new Hippodrome(horses);
 
         Hippodrome.game.run();
+        Hippodrome.game.printWinner();
     }
-
-
-    public List<Horse> getHorses() { return horses; }
 
 
     public void run()
@@ -38,13 +37,13 @@ public class Hippodrome
 
             try
             {
-                Thread.sleep(200);
+                Thread.sleep(350);
             } catch (InterruptedException e) { e.printStackTrace(); }
         }
     }
 
 
-    public void move()
+    private void move()
     {
         for(Horse currentHorse : horses)
         {
@@ -53,21 +52,18 @@ public class Hippodrome
     }
 
 
-    public void print()
+    private void print()
     {
         for(Horse currentHorse : horses)
         {
             currentHorse.print();
         }
 
-        for (int iterator = 0; iterator < 10; iterator++)
-        {
-            System.out.println();
-        }
+        System.out.printf(String.format("%5s", "").replace(' ', '\n'));
     }
 
 
-    public Horse getWinner()
+    private Horse getWinner()
     {
         double maxDistance = 0;
         Horse winner = null;
