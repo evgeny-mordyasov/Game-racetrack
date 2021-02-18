@@ -13,10 +13,23 @@ public class Horse
     }
 
 
-    public void move() {}
+    public void move()
+    {
+        this.distance += (this.speed * Math.random());
+    }
 
 
-    public void print() {}
+    public void print()
+    {
+        int numberOfPoint = (int) Math.floor(this.distance);
+
+        for (int iterator = 0; iterator < numberOfPoint; iterator++)
+        {
+            System.out.print(".");
+        }
+
+        System.out.println(this.name);
+    }
 
 
     public String getName()

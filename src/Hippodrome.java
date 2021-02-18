@@ -21,6 +21,8 @@ public class Hippodrome
         horses.add(new Horse("Плотва 3", 3.0, 0.0));
 
         Hippodrome.game = new Hippodrome(horses);
+
+        Hippodrome.game.run();
     }
 
 
